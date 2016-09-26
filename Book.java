@@ -3,16 +3,16 @@
  * This might form part of a larger application such
  * as a library system, for instance.
  *
- * @author (Insert your name here.)
- * @version (Insert today's date here.)
+ * @author Tyler Friedberg
+ * @version 9/26/2016
  */
 class Book
 {
     // The fields.
     private String author;
     private String title;
-    private int pages;
     private String refNumber;
+    private int pages;    
     private int borrowed;
     private boolean courseText;
 
@@ -50,21 +50,21 @@ class Book
         return refNumber;
     }
     
-    public void setRefNumber(String ref)
+    public void setRefNumber(String ref)//method that sets referene number
     {
-        if (ref.length() == 3)
+        if (ref.length() == 3)//prints the reference number if it is 3 characters
         {
              refNumber = ref;
         }
-        else
+        else//prints an error message if the ref number =/= 3
         {
-            System.out.println("You did something wrong.");
+            System.out.println("ERROR: You did something wrong.");
         }
     }
     
     public int getBorrowed()
     {
-        borrowed = borrowed + 1;
+        borrowed = borrowed + 1;//adds 1 to the "borrowed" counter every time the method is called
         return borrowed;
     }
     
@@ -72,24 +72,24 @@ class Book
     {
         return courseText;
     }
-    
-    public void printAuthor()
+   
+    public void printAuthor()//prints the author of the book
     {
         System.out.println("The author of the book is " + author);
     }
     
-    public void printTitle()
+    public void printTitle()//prints the title of the book
     {
         System.out.println("The title of the book is " + title);
     }
     
-    public void printDetails()
+    public void printDetails()//prints all of the provided details of the book
     {
-        if (refNumber.length() == 0)
+        if (refNumber.length() == 0)//prints the details with ref number as ZZZ if a ref number hasn't been added by user
         {
-            System.out.println("Author: " + author + " . Title: " + title + " . Pages: " + pages + " . Reference number: 'ZZZ'" + " The book has been borrowed " + borrowed + "times");
+            System.out.println("Author: " + author + " . Title: " + title + " . Pages: " + pages + " . Reference number: 'ZZZ'" + " The book has been borrowed " + borrowed + " time(s)");
         }
-        else
+        else//prints all details when refence number is added by user
         {
             System.out.println("Author: " + author + " . Title: " + title + " . Pages: " + pages + " . Reference number: " + refNumber + " The book has been borrowed " + borrowed + " time(s)");
         }
